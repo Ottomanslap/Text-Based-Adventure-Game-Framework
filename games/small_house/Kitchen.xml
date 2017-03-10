@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE room SYSTEM "room.dtd">
+
+<room>
+	<name>Kitchen</name>
+	<desc>A small kitchen, with black and white tiles.</desc>
+	<enti>
+		<name>key</name>
+		<desc>A small metal key. Looks quite new.</desc>
+		<prop>metal</prop>
+		<prop>hard</prop>
+	</enti>
+	<enti>
+		<name>candle</name>
+		<desc>A black candle. Could probably be molded.</desc>
+		<prop>malleble</prop>
+		<prop>black</prop>
+		<prop>wax</prop>
+	</enti>
+	<conn>
+		<name>door</name>
+		<desc>A blue door with a metal doorknob.</desc>
+		<dest>LivingRoom</dest>
+	</conn>
+	<conn>
+		<name>window</name>
+		<desc>A glass window with white borders, very classic.</desc>
+		<dest>Garden</dest>
+	</conn>
+	<conn>
+		<name>door</name>
+		<desc>A white door with a metal doorknob.</desc>
+		<dest>start</dest>
+	</conn>
+</room>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE room SYSTEM "room.dtd">
+
+<room>
+	<name>start</name>
+	<desc>A large bedroom, The biggest in the house. It is dominated by the king sized bed.</desc>
+	<entity>
+		<name>bed</name>
+		<desc>A large king sized bed, decorated with an ornate bedcloth.</desc>
+		<prop>soft</prop>
+	</enti>
+	<conn>
+		<name>door</name>
+		<desc>A white door with a bronze handle.</desc>
+		<dest>Kitchen</dest>
+	</conn>
+</room>

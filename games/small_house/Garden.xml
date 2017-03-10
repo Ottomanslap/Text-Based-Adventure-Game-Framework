@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE room SYSTEM "room.dtd">
+
+<room>
+	<name>Garden</name>
+	<desc>You won the game, good job!</desc>
+</room>
