@@ -5,49 +5,54 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class XML_Parser {
-	
-	private static FileReader reader;
-	
-	public static void Parse(String path) throws FileNotFoundException{
-		
-		FileReader reader = new FileReader(path);
-		
-		
-		
+
+	private FileReader reader;
+	private String data;
+
+	public XML_Parser(String path){
+		try {
+			setReader(new FileReader(path));
+		} catch (FileNotFoundException e) {
+			System.out.println("XML_Parser: Exeption: The specified file could not be found.");
+		}
 	}
-	
-	private static String read() throws IOException{
-		
-		return String.valueOf(reader.read());
-		
+
+	public FileReader getReader() {
+		return reader;
 	}
-	
-	private Node getNextNode() throws IOException{
-		
-		String nextChar = read();
-		
-		while (nextChar != "<"){
+
+	public void setReader(FileReader reader) {
+		this.reader = reader;
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	private char read() {
+
+		try {
+			return (char) reader.read();
+		} catch (IOException e) {
+			return (char) -1;
+		}
+
+	}
+
+	public String readToString(){
+		char nextChar;
+		String str = "";
+		nextChar = read();
+		while (nextChar != (char) -1){
+			System.out.print(nextChar);
+			str += nextChar;
 			nextChar = read();
 		}
-		
-		if (nextChar.equals("!") || nextChar.equals("?")){
-			while (nextChar != ">"){
-				nextChar = read();
-			}
-			return null;
-		}
-		else {
-			String type = "";
-			while (nextChar != " " && nextChar != ">"){
-				nextChar = read();
-				type += nextChar;
-			}
-			type.substring(0, type.length()-2);
-			
-			
-		}
-			
-		
+		return str;
 	}
 
 }
