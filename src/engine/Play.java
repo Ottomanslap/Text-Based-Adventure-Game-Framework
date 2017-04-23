@@ -13,6 +13,7 @@ public class Play {
 			a = new XML_Parser(path);
 			System.out.println(a.getData());
 			System.out.println(a.getHead().getType());
+			System.out.println(a.getTrimmed());
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
