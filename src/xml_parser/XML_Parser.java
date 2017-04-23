@@ -8,13 +8,12 @@ public class XML_Parser {
 
 	private FileReader reader;
 	private String data;
+	private Node head;
 
-	public XML_Parser(String path){
-		try {
-			setReader(new FileReader(path));
-		} catch (FileNotFoundException e) {
-			System.out.println("XML_Parser: Exeption: The specified file could not be found.");
-		}
+	public XML_Parser(String path) throws FileNotFoundException{
+		setReader(new FileReader(path));
+		setData(readToString().trim());
+		generateHead(path);
 	}
 
 	public FileReader getReader() {
@@ -32,6 +31,10 @@ public class XML_Parser {
 	public void setData(String data) {
 		this.data = data;
 	}
+	
+	public Node getHead(){
+		return head;
+	}
 
 	private char read() {
 
@@ -43,7 +46,7 @@ public class XML_Parser {
 
 	}
 
-	public String readToString(){
+	private String readToString(){
 		char nextChar;
 		String str = "";
 		nextChar = read();
@@ -53,6 +56,11 @@ public class XML_Parser {
 			nextChar = read();
 		}
 		return str;
+	}
+	
+	private void generateHead(String path){
+		String name = path.substring(path.lastIndexOf((int) '/') + 1, path.lastIndexOf((int) '.'));
+		head = new Node(name);
 	}
 
 }

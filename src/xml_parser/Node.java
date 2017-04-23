@@ -8,6 +8,10 @@ public class Node {
 	private ArrayList<Attribute> attributes = new ArrayList<Attribute>();
 	private ArrayList<Node> nodes = new ArrayList<Node>();
 	
+	Node(String type){
+		this.setType(type);
+	}
+	
 	Node(String type, ArrayList<Attribute> attributes, ArrayList<Node> nodes){
 		this.setType(type);
 		this.setAttributes(attributes);
