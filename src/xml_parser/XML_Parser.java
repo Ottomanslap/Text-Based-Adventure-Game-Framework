@@ -32,7 +32,7 @@ public class XML_Parser {
 			String pre = file.substring(0, next);
 			file = file.substring(next);
 			file = file.substring(file.indexOf(">") + 1);
-			return pre.trim() + trimExcess(file.substring(file.indexOf(">") + 1)).trim();
+			return pre.trim() + trimExcess(file).trim();
 		}else{
 			String pre = file.substring(0, next + 1);
 			file = file.substring(next + 1);

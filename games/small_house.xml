@@ -18,6 +18,7 @@
         <prop>wax</prop>
     </enti>
     <conn name="door">
+        <!this is a random string>
         <desc>A blue door with a metal doorknob.</desc>
         <dest>living room</dest>
     </conn>
